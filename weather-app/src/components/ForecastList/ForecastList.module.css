@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.tempToggle {
+  display: flex;
+  column-gap: 16px;
+}
+
+.temp {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3F3F3F;
+  background-color: #E7E7E7;
+  border-radius: 50%;
+}
+
+.active {
+  color: #fff;
+  background-color: #875FF7;
+}
+
+.timeToggle {
+  display: flex;
+  column-gap: 16px;
+  font-size: 24px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 20px;
+}
+
+.humidityIcon svg {
+  fill: #875FF7;
+}

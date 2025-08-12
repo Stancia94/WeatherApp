@@ -1,0 +1,42 @@
+.card {
+  width: 100%;
+  max-width: 235px;
+  border-radius: 20px;
+  border: 3px solid #BAA3FA;
+  padding: 10px 16px;
+  position: relative;
+}
+
+.time {
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.weather {
+  font-size: 12px;
+  font-weight: 600;
+  color: #919191;
+  margin-bottom: 8px;
+}
+
+.icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tempWrapper, .humidityWrapper {
+  display: flex;
+  column-gap: 16px;
+}
+
+.temp, .humidity {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.humidityIcon path {
+  stroke: #BAA3FA;
+}
