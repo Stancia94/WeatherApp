@@ -27,10 +27,15 @@
   max-width: 503px;
   height: 44px;
   font-size: 16px;
-  border-radius: 100px;
+  border-radius: 16px;
   padding: 10px 10px 10px 54px;
   border: none;
-  background-color: #E7E7E7;
+  background-color: #f7f7f7;
+}
+
+.controlGroup {
+  position: relative;
+  z-index: 10;
 }
 
 .inputSearch:focus {
@@ -56,9 +61,33 @@
 
 .inputGuess {
   position: absolute;
-  left: 0;
-  top: 100%;
-  background-color: wheat;
+  left: 50%;
+  top: -5px;
+  background-color: #BAA3FA;
+  color: white;
+  border-radius: 16px;
+  width: 110%;
+  padding: 16px;
+  padding-top: 60px;
+  transform: translateX(-50%);
+  transition: height 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.inputGuess li {
+  position: relative;
+  z-index: 10;
+}
+
+.inputGuess li::before {
+  content: '';
   width: 100%;
-  padding-left: 54px;
+  height: 120%;
+  border-bottom: 1px solid #f7f7f7;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
