@@ -22,7 +22,7 @@ const day = date.getDate();
 const year = date.getFullYear();
 //open geocoding api
 //http://api.openweathermap.org/geo/1.0/direct?q=Лондон&limit=5&appid=2e9adf378dd75b978b86aec199c3501e
-export default function SearchSection() {
+export default function SearchSection({ onSendCity }) {
   const [city, setCity] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   useEffect(() => {
@@ -68,7 +68,13 @@ export default function SearchSection() {
           <ul className={styles.inputGuess}>
             {city.map((city, index) => {
               return (
-                <li key={index} onClick={() => console.log(city.lat, city.lon)}>
+                <li
+                  key={index}
+                  onClick={() => {
+                    setSearchQuery("");
+                    onSendCity(city);
+                  }}
+                >
                   {city.name} {`(${city.state})`}
                 </li>
               );

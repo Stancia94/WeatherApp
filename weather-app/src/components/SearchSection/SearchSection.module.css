@@ -78,6 +78,7 @@
 
 .inputGuess li {
   position: relative;
+  cursor: pointer;
   z-index: 10;
 }
 
