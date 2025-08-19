@@ -59,7 +59,7 @@ export default function SearchSection({ onSendCity }) {
             className={styles.inputSearch}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Volgograd"
+            placeholder="City"
           />
           <img className={styles.imgSearch} src={searchSrc} alt="" />
         </div>

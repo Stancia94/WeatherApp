@@ -2,6 +2,10 @@
   padding: 25px 120px;
   background-color: grey;
   background-image: url('../../assets/images/weatherCardMainBg.png');
+  background-image: url('../../assets/images/sunshine.avif');
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
   border-radius: 20px;
   color: #FEFAF9;
   display: flex;
