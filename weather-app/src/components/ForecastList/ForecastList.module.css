@@ -31,12 +31,39 @@
   font-size: 24px;
 }
 
+@media (max-width:490px) {
+  .timeToggle {
+    font-size: 18px;
+  }
+}
+
 .list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   width: 100%;
   gap: 20px;
 }
+
+@media (max-width:1280px) {
+  .list {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width:768px) {
+  .list {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+/* @media (max-width:400px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+} */
 
 .humidityIcon svg {
   fill: #875FF7;

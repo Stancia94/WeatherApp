@@ -4,6 +4,30 @@
   align-items: end;
   margin-bottom: 40px;
   margin-top: 40px;
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width:490px) {
+  .searchSection {
+    flex-direction: column;
+    align-items: start;
+    row-gap: 40px;
+  }
+
+  .inputSearch {
+    max-width: none;
+    width: 100%;
+    align-self: stretch;
+  }
+
+  .inputWrapper {
+    width: 100%;
+  }
+
+  .controlGroup {
+    width: 100%;
+  }
 }
 
 .titleWrapper {

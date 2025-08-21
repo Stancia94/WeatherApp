@@ -1,11 +1,18 @@
 .card {
   width: 100%;
-  max-width: 235px;
+  max-width: 195px;
   border-radius: 20px;
   border: 3px solid #BAA3FA;
   padding: 10px 16px;
   position: relative;
 }
+
+@media (max-width:1280px) {
+  .card {
+    max-width: none;
+  }
+}
+
 
 .time {
   font-weight: 600;
@@ -25,6 +32,16 @@
   right: 16px;
   top: 50%;
   transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+}
+
+@media(max-width:400px) {
+  .icon {
+    top: 35%;
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .tempWrapper, .humidityWrapper {
