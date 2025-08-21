@@ -2,32 +2,60 @@ import styles from "./WeatherCardMain.module.css";
 import moon from "../../assets/icons/moon.svg";
 import wind from "../../assets/icons/wind.svg";
 import humidity from "../../assets/icons/droplet.svg";
+import { AnimatePresence, motion } from "motion/react";
 
+import dayBg from "../../assets/images/sunshine.avif";
+import nightBg from "../../assets/images/night.avif";
+import { useEffect } from "react";
 export default function WeatherCardMain({ city, weatherData }) {
+  const bgImages = [dayBg, nightBg];
+  const bgImage = weatherData.is_day ? dayBg : nightBg;
+  useEffect(() => {
+    bgImages.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
   return (
     <div className={styles.card}>
-      <div className={styles.leftWrappper}>
-        <h2 className={styles.title}>{city.name ? city.name : "Volgograd"}</h2>
-        <div className={styles.country}>
-          {city.state ? city.state : "Russia"}
+      <div className={styles.cardWrapper}>
+        <div className={styles.leftWrappper}>
+          <h2 className={styles.title}>
+            {city.name ? city.name : "Volgograd"}
+          </h2>
+          <div className={styles.country}>
+            {city.state ? city.state : "Russia"}
+          </div>
+          <div className={styles.temp}>{weatherData.temperature_2m}°C</div>
         </div>
-        <div className={styles.temp}>{weatherData.temperature_2m}°C</div>
-      </div>
-      <div className={styles.rightWrapper}>
-        <img src={moon} className={styles.currentWeatherLogo}></img>
-        <div className={styles.windWrapper}>
-          <img src={wind} className={styles.windLogo} alt="" />
-          <div className={styles.windText}>
-            {weatherData.wind_speed_10m} km/h
+        <div className={styles.rightWrapper}>
+          <img src={moon} className={styles.currentWeatherLogo}></img>
+          <div className={styles.windWrapper}>
+            <img src={wind} className={styles.windLogo} alt="" />
+            <div className={styles.windText}>
+              {weatherData.wind_speed_10m} km/h
+            </div>
+          </div>
+          <div className={styles.humidityWrapper}>
+            <img src={humidity} className={styles.humidityLogo} alt="" />
+            <div className={styles.humidityText}>
+              {weatherData.relative_humidity_2m}%
+            </div>
           </div>
         </div>
-        <div className={styles.humidityWrapper}>
-          <img src={humidity} className={styles.humidityLogo} alt="" />
-          <div className={styles.humidityText}>
-            {weatherData.relative_humidity_2m}%
-          </div>
-        </div>
       </div>
+      <AnimatePresence mode="sync">
+        <motion.div
+          key={bgImage}
+          className={styles.cardBg}
+          layout
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          style={{ backgroundImage: `url(${bgImage})` }}
+        />
+      </AnimatePresence>
     </div>
   );
 }
