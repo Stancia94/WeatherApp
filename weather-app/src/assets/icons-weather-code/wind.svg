@@ -13,7 +13,7 @@
       </feMerge>
     </filter>
   </defs>
-  <g transform="translate(16 -2)" >
+  <g transform="translate(12,-2.8)" >
     <g class="am-weather-wind" transform="translate(-16,10)" fill="none" stroke="white" stroke-linecap="round"
       stroke-width="3">
       <path stroke-dasharray="150 10" d="M25.5 5A4 4 0 1 1 29 11H10">

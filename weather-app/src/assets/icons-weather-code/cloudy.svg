@@ -96,7 +96,7 @@
       ]]>
     </style>
   </defs>
-  <g id="cloudy" transform="translate(16,-2)" filter="url(#blur)">
+  <g id="cloudy" transform="translate(12,1)" filter="url(#blur)">
     <g class="am-weather-cloud-1"
       style="-moz-animation-duration:7s;-moz-animation-iteration-count:infinite;-moz-animation-name:am-weather-cloud-1;-moz-animation-timing-function:linear;-webkit-animation-duration:7s;-webkit-animation-iteration-count:infinite;-webkit-animation-name:am-weather-cloud-1;-webkit-animation-timing-function:linear">
       <path transform="matrix(.6 0 0 .6 -10 -8)"

@@ -90,7 +90,7 @@
       ]]>
     </style>
   </defs>
-  <g transform="translate(16,-2)" filter="url(#blur)">
+  <g transform="translate(12,1)" filter="url(#blur)">
     <g class="am-weather-cloud-3"
       style="-moz-animation-duration:3s;-moz-animation-iteration-count:infinite;-moz-animation-name:am-weather-cloud-2;-moz-animation-timing-function:linear;-webkit-animation-duration:3s;-webkit-animation-iteration-count:infinite;-webkit-animation-name:am-weather-cloud-2;-webkit-animation-timing-function:linear">
       <path transform="translate(-20,-11)"
