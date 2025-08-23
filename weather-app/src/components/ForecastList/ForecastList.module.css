@@ -4,10 +4,16 @@
   margin-bottom: 40px;
 }
 
-.tempToggle {
-  display: flex;
-  column-gap: 16px;
+.forecast {
+  margin-bottom: 40px;
 }
+
+@media (max-width:490px) {
+  .header {
+    margin-bottom: 24px;
+  }
+}
+
 
 .temp {
   width: 35px;
@@ -20,19 +26,29 @@
   border-radius: 50%;
 }
 
+.time {
+  padding: 4px 8px;
+  border-radius: 2px;
+}
+
 .active {
   color: #fff;
   background-color: #875FF7;
 }
 
-.timeToggle {
+.timeToggleWrapper {
   display: flex;
   column-gap: 16px;
   font-size: 24px;
 }
 
+.tempToggleWrapper {
+  display: flex;
+  column-gap: 16px;
+}
+
 @media (max-width:490px) {
-  .timeToggle {
+  .timeToggleWrapper {
     font-size: 18px;
   }
 }
@@ -56,6 +72,13 @@
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+  }
+}
+
+@media(max-width:400px) {
+  .list {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

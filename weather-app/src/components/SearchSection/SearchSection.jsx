@@ -64,7 +64,7 @@ export default function SearchSection({ onSendCity }) {
           <img className={styles.imgSearch} src={searchSrc} alt="" />
         </div>
 
-        {searchQuery.length != 0 && (
+        {searchQuery.trim() != "" && (
           <ul className={styles.inputGuess}>
             {city.map((city, index) => {
               return (

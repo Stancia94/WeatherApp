@@ -12,7 +12,8 @@
   .searchSection {
     flex-direction: column;
     align-items: start;
-    row-gap: 40px;
+    row-gap: 16px;
+    margin-bottom: 24px;
   }
 
   .inputSearch {
@@ -41,6 +42,16 @@
   font-size: 32px;
   font-style: normal;
   color: #0E0E0E;
+}
+
+@media(max-width:490px) {
+  .titleWrapper {
+    row-gap: 8px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
 }
 
 .date {
