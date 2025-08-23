@@ -10,6 +10,7 @@ export default function Main() {
       temperature_2m: 26,
       relative_humidity_2m: 67,
       wind_speed_10m: 17,
+      weather_code: 1,
     },
   });
   useEffect(() => {
@@ -22,8 +23,14 @@ export default function Main() {
           "relative_humidity_2m",
           "wind_speed_10m",
           "is_day",
+          "weather_code",
         ],
-        hourly: ["temperature_2m", "relative_humidity_2m", "wind_speed_10m"],
+        hourly: [
+          "temperature_2m",
+          "relative_humidity_2m",
+          "wind_speed_10m",
+          "weather_code",
+        ],
       };
       const url = "https://api.open-meteo.com/v1/forecast";
       const responses = await fetchWeatherApi(url, params);
@@ -39,11 +46,13 @@ export default function Main() {
           relative_humidity_2m: Math.trunc(current.variables(1).value()),
           wind_speed_10m: Math.trunc(current.variables(2).value()),
           is_day: current.variables(3).value(),
+          weather_code: current.variables(4).value(),
         },
         hourly: {
           temperature_2m: hourly.variables(0).valuesArray(),
           relative_humidity_2m: hourly.variables(1).valuesArray(),
           wind_speed_10m: hourly.variables(2).valuesArray(),
+          weather_code: hourly.variables(3).valuesArray(),
           time: [
             ...Array(
               (Number(hourly.timeEnd()) - Number(hourly.time())) /
@@ -74,6 +83,8 @@ export default function Main() {
         `\nCurrent relative_humidity_2m: ${weatherData.current.relative_humidity_2m}`,
         `\nCurrent wind_speed_10m: ${weatherData.current.wind_speed_10m}`,
         `\nIs a day?: ${weatherData.current.is_day}`,
+        `\nWeather Code: ${weatherData.current.weather_code}`,
+        weatherData.current,
 
         weatherData.hourly
       );

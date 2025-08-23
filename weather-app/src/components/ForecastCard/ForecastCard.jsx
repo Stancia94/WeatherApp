@@ -1,10 +1,10 @@
 import styles from "./ForecastCard.module.css";
-import cloudRain from "../../assets/icons/cloud-rain.svg";
 import humidity from "../../assets/icons/droplet-purple.svg";
 import thermometer from "../../assets/icons/thermometer.svg";
 import { useEffect, useState } from "react";
 import { DAY_NAMES } from "../../utils/constant";
-
+import { motion, AnimatePresence } from "motion/react";
+import { WEATHER_CODE } from "../../utils/matchingIconAndWeatherCode";
 export default function ForecastCard({ data, tempView }) {
   const { time, relative_humidity_2m } = data;
   const [temperature, setTemperature] = useState(data.temperature_2m);
@@ -21,16 +21,36 @@ export default function ForecastCard({ data, tempView }) {
         {DAY_NAMES[time.getDay()] + " " + time.getDate()}
       </h3>
       <div className={styles.weather}>Raining</div>
-      <img src={cloudRain} className={styles.icon}></img>
+      <img src={WEATHER_CODE[data.weather_code]} className={styles.icon}></img>
       <div className={styles.tempWrapper}>
         <img src={thermometer} alt="" />
-        <div className={styles.temp}>
-          {temperature} {tempView == "F" ? "F" : "C"}°
-        </div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={temperature}
+            className={styles.temp}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {temperature} {tempView == "F" ? "F" : "C"}°
+          </motion.div>
+        </AnimatePresence>
       </div>
       <div className={styles.humidityWrapper}>
         <img src={humidity} className={styles.humidityIcon} alt="" />
-        <div className={styles.humidity}>{relative_humidity_2m} %</div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={relative_humidity_2m}
+            className={styles.humidity}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {relative_humidity_2m} %
+          </motion.div>
+        </AnimatePresence>
       </div>
     </article>
   );

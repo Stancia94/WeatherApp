@@ -1,17 +1,18 @@
 import styles from "./WeatherCardMain.module.css";
-import moon from "../../assets/icons/moon.svg";
-import sun from "../../assets/icons/sun.svg";
-import wind from "../../assets/icons/wind.svg";
+import wind from "../../assets/icons-weather-code/wind.svg";
 import humidity from "../../assets/icons/droplet.svg";
 import { AnimatePresence, motion } from "motion/react";
 
 import dayBg from "../../assets/images/sunshine.avif";
 import nightBg from "../../assets/images/night.avif";
 import { useEffect } from "react";
+
+import { IS_DAY, WEATHER_CODE } from "../../utils/matchingIconAndWeatherCode";
+
 export default function WeatherCardMain({ city, weatherData }) {
   const bgImages = [dayBg, nightBg];
   const bgImage = weatherData.is_day ? dayBg : nightBg;
-  const weatherLogo = weatherData.is_day ? sun : moon;
+  const weatherLogo = weatherData.is_day ? IS_DAY["day"] : IS_DAY["night"];
   useEffect(() => {
     bgImages.forEach((src) => {
       const img = new Image();
@@ -38,19 +39,18 @@ export default function WeatherCardMain({ city, weatherData }) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.3 }}
               src={weatherLogo}
             />
           </AnimatePresence>
-          {/* <img src={moon} className={styles.currentWeatherLogo}></img> */}
           <div className={styles.windWrapper}>
-            <img src={wind} className={styles.windLogo} alt="" />
+            <img src={wind} className={styles.logo} alt="" />
             <div className={styles.windText}>
               {weatherData.wind_speed_10m} km/h
             </div>
           </div>
           <div className={styles.humidityWrapper}>
-            <img src={humidity} className={styles.humidityLogo} alt="" />
+            <img src={humidity} className={styles.logo} alt="" />
             <div className={styles.humidityText}>
               {weatherData.relative_humidity_2m}%
             </div>
@@ -64,7 +64,7 @@ export default function WeatherCardMain({ city, weatherData }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3 }}
           style={{ backgroundImage: `url(${bgImage})` }}
         />
       </AnimatePresence>

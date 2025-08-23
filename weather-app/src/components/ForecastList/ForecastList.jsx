@@ -13,6 +13,7 @@ export default function ForecastList({ weatherData }) {
       temperature_2m: Math.trunc(weatherData.temperature_2m[index]),
       relative_humidity_2m: Math.trunc(weatherData.relative_humidity_2m[index]),
       wind_speed_10m: Math.trunc(weatherData.wind_speed_10m[index]),
+      weather_code: weatherData.weather_code[index],
     }));
     return (
       <section className={styles.forecast}>
