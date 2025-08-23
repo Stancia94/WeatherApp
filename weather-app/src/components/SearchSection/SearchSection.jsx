@@ -1,23 +1,10 @@
 import styles from "./SearchSection.module.css";
 import searchSrc from "../../assets/icons/search.svg";
 import { useEffect, useState } from "react";
+import { MONTH_NAMES } from "../../utils/constant";
 
-const monthNames = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
 const date = new Date();
-const month = monthNames[date.getMonth()];
+const month = MONTH_NAMES[date.getMonth()];
 const day = date.getDate();
 const year = date.getFullYear();
 //open geocoding api

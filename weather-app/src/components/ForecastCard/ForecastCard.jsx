@@ -3,15 +3,8 @@ import cloudRain from "../../assets/icons/cloud-rain.svg";
 import humidity from "../../assets/icons/droplet-purple.svg";
 import thermometer from "../../assets/icons/thermometer.svg";
 import { useEffect, useState } from "react";
-const dayNames = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
+import { DAY_NAMES } from "../../utils/constant";
+
 export default function ForecastCard({ data, tempView }) {
   const { time, relative_humidity_2m } = data;
   const [temperature, setTemperature] = useState(data.temperature_2m);
@@ -25,7 +18,7 @@ export default function ForecastCard({ data, tempView }) {
   return (
     <article className={styles.card}>
       <h3 className={styles.time}>
-        {dayNames[time.getDay()] + " " + time.getDate()}
+        {DAY_NAMES[time.getDay()] + " " + time.getDate()}
       </h3>
       <div className={styles.weather}>Raining</div>
       <img src={cloudRain} className={styles.icon}></img>

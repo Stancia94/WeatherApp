@@ -1,6 +1,6 @@
 import styles from "./ForecastList.module.css";
 import ForecastCard from "../ForecastCard/ForecastCard";
-import { use, useState } from "react";
+import { useState } from "react";
 export default function ForecastList({ weatherData }) {
   const [forecastView, setForecastView] = useState("Week");
   const [tempView, setTempView] = useState("C");
