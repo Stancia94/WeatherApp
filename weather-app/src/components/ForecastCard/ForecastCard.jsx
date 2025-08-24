@@ -20,7 +20,6 @@ export default function ForecastCard({ data, tempView }) {
       <h3 className={styles.time}>
         {DAY_NAMES[time.getDay()] + " " + time.getDate()}
       </h3>
-      <div className={styles.weather}>Raining</div>
       <img src={WEATHER_CODE[data.weather_code]} className={styles.icon}></img>
       <div className={styles.tempWrapper}>
         <img src={thermometer} alt="" />

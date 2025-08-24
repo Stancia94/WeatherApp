@@ -22,7 +22,7 @@
   align-items: center;
   justify-content: center;
   color: #3F3F3F;
-  background-color: #E7E7E7;
+  background-color: white;
   border-radius: 50%;
 }
 
@@ -33,7 +33,7 @@
 
 .active {
   color: #fff;
-  background-color: #875FF7;
+  background-color: #5A1FFF;
 }
 
 .timeToggleWrapper {
@@ -45,7 +45,13 @@
 .tempToggleWrapper {
   display: flex;
   column-gap: 16px;
+  border: 1px solid #875FF7;
+  padding: 4px;
+  border-radius: 24px;
+  background-color: #875FF7;
+  position: relative;
 }
+
 
 @media (max-width:490px) {
   .timeToggleWrapper {
