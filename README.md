@@ -1,12 +1,39 @@
-# React + Vite
+# WeatherApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Небольшое приложение погоды, написанное с использованием React, JavaScript и Vite.  
+Показывает текущую погоду по заданному местоположению.
+Проект создан в учебных целях.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Технологии
 
-## Expanding the ESLint configuration
+- **React** — библиотека для построения пользовательского интерфейса. 
+- **Vite** — быстрый инструмент для сборки и разработки фронтенда с горячей перезагрузкой (HMR).
+- **ESLint** — статический анализ кода, правила качества. 
+- **JavaScript**, **HTML**, **CSS** — основные языки проекта. 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📂 Структура проекта
+
+Типичные части проекта:
+
+- `public/` — статические ресурсы, HTML-шаблоны. 
+- `src/` — исходный код, компоненты, стили, логика приложения. 
+- `vite.config.js` — конфигурация сборщика Vite. 
+
+---
+
+## 🛠 Установка и запуск
+
+```bash
+# установить зависимости
+npm install
+
+# запустить приложение в режиме разработки
+npm run dev
+
+# собрать для продакшена
+npm run build
+```
